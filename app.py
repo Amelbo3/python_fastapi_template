@@ -1,15 +1,9 @@
-from typing import Union
-
 from fastapi import FastAPI
-from pydantic import BaseModel
+from models import *
+from database import *
+
 
 app = FastAPI()
-
-
-class Item(BaseModel):
-    name: str
-    price: float
-    is_offer: Union[bool, None] = None
 
 
 @app.get("/")
